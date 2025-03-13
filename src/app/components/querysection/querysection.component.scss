@@ -1,0 +1,50 @@
+.radio-group {
+    display: flex;
+    gap: 0.6rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-group label {
+    display: flex;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+
+  .radio-input  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--grey-500);
+    border-radius: 4px;
+    font: inherit;
+  }
+
+  .radio-input:hover{
+    background-color: var(--green-200);
+    border: 1px solid var(--green-600);
+  }
+
+  .radio-input input[type="radio"] {
+    accent-color: var(--green-600);
+  }

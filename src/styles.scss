@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --green-200:hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+  --white-color: hsl(0, 0%, 100%);
+  --red-color: hsl(0, 66%, 54%);
+}
+
+
+.html {
+    font-size: 16px;
+    scroll-behavior:smooth;
+  }
+
+  *, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+    background-color: var(--green-200);
+  }
+
+/* Form Group Styles */
+.form-group label {
+  color: var(--grey-500)
+}
+
+
+
+/* Inputs & Textareas */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--grey-500);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.form-group input[type="text"]:hover,
+.form-group input[type="email"]:hover,
+.form-group textarea:hover {
+  border: 1px solid var(--green-600);
+}
+
+*:focus {
+  outline: none;
+}
+
+span {
+  color: var(--green-color);
+}
+

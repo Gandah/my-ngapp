@@ -1,0 +1,11 @@
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(24rem, 80vw, 42rem);
+}
+
+.content {
+    width: 100%; 
+}
