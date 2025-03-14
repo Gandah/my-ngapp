@@ -9,5 +9,5 @@ import { CardboxComponent } from './components/cardbox/cardbox.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'my-fapp';
+  title = 'my-ngapp';
 }

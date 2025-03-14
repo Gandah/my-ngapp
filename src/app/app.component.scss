@@ -3,7 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(24rem, 80vw, 42rem);
+    width: clamp(360px, 80vw, 42rem);
+    height: 100%;
+
+    @media (min-width: 375px) {
+        padding-bottom: 0.5rem;
+    }
+    
 }
 
 .content {

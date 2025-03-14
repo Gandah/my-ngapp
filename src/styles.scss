@@ -36,6 +36,26 @@ body {
   color: var(--grey-500)
 }
 
+input.ng-valid {
+  border: 1px solid var(--green-600);
+}
+
+
+form *.ng-touched.ng-invalid,
+form.ng-submitted *.ng-invalid{
+  border: 1px solid var(--red-color);
+}
+
+
+.form-group input
+{
+  border: 1px solid var(--grey-500);
+}
+
+.form-group input:hover
+{
+  border: 1px solid var(--green-600);
+}
 
 
 /* Inputs & Textareas */
@@ -44,16 +64,16 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid var(--grey-500);
+  
   border-radius: 4px;
   font: inherit;
 }
 
-.form-group input[type="text"]:hover,
-.form-group input[type="email"]:hover,
-.form-group textarea:hover {
-  border: 1px solid var(--green-600);
-}
+// .form-group input[type="text"]:hover,
+// .form-group input[type="email"]:hover,
+// .form-group textarea:hover {
+//   border: 1px solid var(--green-600);
+// }
 
 *:focus {
   outline: none;
@@ -63,3 +83,9 @@ span {
   color: var(--green-color);
 }
 
+.error-message{
+  color: var(--red-color);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  text-wrap: pretty;
+}

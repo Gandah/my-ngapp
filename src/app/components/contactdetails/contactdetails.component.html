@@ -4,7 +4,19 @@
       <label for="firstName" >First Name <span>*</span></label>
       <input type="text" id="firstName" name="firstName"
        [(ngModel)]="nameFields.firstName" 
+       #firstName="ngModel" 
+       minlength="2"
        required/>
+
+       @if(firstName.touched || formState.submitted){
+          @if(firstName.errors?.['required']) {
+              <span class="error-message">This field is required</span>
+            }
+
+          @if(firstName.errors?.['minlength']) {
+            <span class="error-message">Minimum 2 characters required</span>
+          }
+       }
     </div>
     
     <!-- Last Name -->
@@ -12,15 +24,38 @@
       <label for="lastName">Last Name <span>*</span></label>
       <input type="text" id="lastName" name="lastName" 
        [(ngModel)]="nameFields.lastName" 
+       #lastName="ngModel" 
+       minlength="2"
        required  />
+
+       @if(lastName.touched || formState.submitted){
+        @if(lastName.errors?.['required']) {
+            <span class="error-message">This field is required</span>
+          }
+
+        @if(lastName.errors?.['minlength']) {
+          <span class="error-message">Minimum 2 characters required</span>
+        }
+     }
     </div>
   
   
   <!-- Email Address -->
   <div class="form-group">
-    <label for="emailAddress">Email Address <span>*</span></label>
-    <input type="email" id="emailAddress" name="emailAddress" 
-     [(ngModel)]="nameFields.email"
-    required />
+    <label for="email">Email Address <span>*</span></label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email"
+      [(ngModel)]="nameFields.email"
+      #email="ngModel"
+      email 
+      required 
+    />
+    @if(email.touched || formState.submitted) {
+      @if(email.errors?.['email'] || email.errors?.['required']){
+        <span class="error-message">Please enter a valid email address</span>
+      }
+    }
   </div>
 </div>

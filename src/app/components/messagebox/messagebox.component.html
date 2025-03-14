@@ -1,15 +1,38 @@
 <div class="form-group">
-    <label for="message">Message <span>*</span></label>
-    <textarea id="message" name="message" rows="4" required [(ngModel)]="nameFields.message"></textarea>
-  </div>
+  <label for="message">Message <span>*</span></label>
+  <textarea
+    id="message"
+    name="message"
+    rows="4"
+    [(ngModel)]="nameFields.message"
+    #message="ngModel"
+    required
+  ></textarea>
 
-  <!-- Consent -->
-  <div class="form-group checkbox-group">
-    <input type="checkbox" id="consent" name="consent" 
-    [(ngModel)]="nameFields.consent"
-     required/>
+  @if((message.touched || formState.submitted) && message.errors?.['required']){
+  <span class="error-message">This field is required</span>
+  }
+</div>
+
+<!-- Consent -->
+<div class="form-group">
+  <div class="checkbox-group">
+    <input
+      type="checkbox"
+      id="consent"
+      name="consent"
+      #consent="ngModel"
+      [(ngModel)]="nameFields.consent"
+      required
+    />
     <label for="consent">
       I consent to being contacted by the team
       <span>*</span>
     </label>
   </div>
+  @if((consent.touched || formState.submitted) && consent.errors?.['required']){
+  <span class="error-message"
+    >To submit this form, please consent to being contacted
+  </span>
+  }
+</div>

@@ -48,3 +48,13 @@
   .radio-input input[type="radio"] {
     accent-color: var(--green-600);
   }
+
+
+.radio-group input{
+  border: 1px solid var(--grey-500);
+}
+
+
+.radio-group input:hover{
+  border: 1px solid var(--green-600);
+}

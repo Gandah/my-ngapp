@@ -2,12 +2,15 @@
   <label>Query Type <span>*</span></label>
   <div class="radio-group">
     <div class="radio-input">
-      <input type="radio" name="queryType" value="general" [(ngModel)]="nameFields.queryType" required/>
+      <input type="radio" name="queryType" value="general" [(ngModel)]="nameFields.queryType" #queryType="ngModel" required/>
       General Enquiry
     </div>
     <div class="radio-input">
-      <input type="radio" name="queryType" value="support" [(ngModel)]="nameFields.queryType" required />
+      <input type="radio" name="queryType" value="support" [(ngModel)]="nameFields.queryType" #queryType="ngModel" required />
       Support Request
     </div>
   </div>
+  @if((queryType.touched || formState.submitted) && queryType.errors?.['required']){
+    <span class="error-message">Please select a query type</span>
+  }
 </div>
